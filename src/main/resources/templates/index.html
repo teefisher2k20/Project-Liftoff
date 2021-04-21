@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org/">
     <title>Home Page</title>
@@ -10,16 +10,13 @@
     <h1 th:replace="fragments :: welcomeMessage"></h1>
     <h2>Sign In or Register</h2>
     <br><br>
-
-    <form>
+    <form method="post" action="create">
         <label for="userName">Username</label><br>
             <input type="text" id="userName" name="userName"><br>
         <label for="password">Password</label><br>
             <input type="password" id="password" name="password"><br>
-            <button type="button" class="btn btn-primary">Enter</button><br>
-            <button type="button" class="btn btn-secondary">Register</button>
+            <input type="submit" value="Enter">
+            <input type="submit" value="SignUp">
     </form>
-
-
 </body>
 </html>
