@@ -2,31 +2,33 @@ package org.launchcode.projectliftoff.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("voters")
 public class HomePageController {
 
     private static List<String> landingPage = new ArrayList<>();
 
-    //localhost:8080/voters
+    //localhost:8080
     @GetMapping
     public String showLandingPage(Model model) {
         model.addAttribute("landingPage", landingPage);
 
         return "index";
     }
-//localhost:8080/voters/create
+//localhost:8080/create
     @GetMapping("create")
     public String createNewVoterForm(Model model) {
 
         return "voters/register";
     }
-
+//posts the voter confirmation page
     @PostMapping("create")
     public String confirmNewVoter(@RequestParam String firstName) {
         landingPage.add(firstName);
