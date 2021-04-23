@@ -30,10 +30,10 @@ public class HomePageController {
     }
 //posts the voter confirmation page
     @PostMapping("create")
-    public String confirmNewVoter(@RequestParam String firstName) {
-        landingPage.add(firstName);
+    public String confirmNewVoter(Model model) {
+
         return "voters/confirm";
     }
 
+    }
 
-}

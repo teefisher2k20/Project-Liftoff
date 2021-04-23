@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org/">
-    <title></title>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:fragment="head">
+    <meta charset="UTF-8" >
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
-<body>
-<h1 th:fragment="welcomeMessage">Welcome to Project Liftoff's Landing Page</h1>
+<body class="container">
+<h4 th:fragment="welcomeMessage">Welcome to Project Liftoff</h4>
+<nav th:fragment="navigation">
+    <ul>
+        <li>
+            <a href="/create"><em>New user</em></a>
+        </li>
+        <li>
+            <a href="candidate/create"><em>New candidate</em></a>
+        </li>
+        <li>
+            <a href="/create"><em>View upcoming events<em></em></a>
+        </li>
+    </ul>
+    <nav>
 </body>
 </html>
