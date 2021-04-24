@@ -5,6 +5,7 @@ import java.util.Objects;
 public class VoterQuestions {
 
     private int id;
+    private static int nextId = 1;
 
     private int dateOfBirth;
     private String userName;
@@ -30,6 +31,8 @@ public class VoterQuestions {
         this.zip = zip;
         this.phone = phone;
         this.email = email;
+        this.id = nextId;
+        nextId++;
     }
 
     public int getId() {

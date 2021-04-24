@@ -2,11 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 <body class="container">
+<div class="jumbotron">
 <h4 th:fragment="welcomeMessage">Welcome to Project Liftoff</h4>
 
-
 <form method="post" action="create">
-    <h1>Enter Candidate Information</h1>
+    <h5>Enter candidate information</h5>
+
     <div>
         <label for="bDay"><em>Date of birth:</em></label>
             <input type="date" id="bDay" name="dateOfBirth">
@@ -24,9 +25,9 @@
             <input type="text" id="lastName" name="lastName">
     </div>
     <div>
-        <input type = 'submit' value = 'Enter' />
+        <input type="submit" class="btn btn-success" value="submit" />
     </div>
 </form>
-
+</div>
 </body>
 </html>

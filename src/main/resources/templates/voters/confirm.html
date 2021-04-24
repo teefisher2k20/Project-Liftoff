@@ -8,11 +8,15 @@
 
 
 <h1>Thank You For Registering</h1>
-<ul>
-    <th:block th:each="name : ${names}">
-            <li th:text="${name}"></li>
-    </th:block>
-</ul>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Username</th>
+        <th>Password</th>
+    </tr>
+
+</table>
 <div>
     <nav th:replace="fragments :: navigation">
     </nav>

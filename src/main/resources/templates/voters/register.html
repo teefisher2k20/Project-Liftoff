@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head>
-    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org/">
+    <meta charset="UTF-8" >
     <title>Create Account</title>
    <link th:href="@{styles.css}" rel="stylesheet" />
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
-<body>
-<h1>Voter registration form</h1>
+<body class="container">
+<div class="jumbotron">
+<h4 th:fragment="welcomeMessage">Welcome to Project Liftoff</h4>
+<h1><em>Voter registration form</em></h1>
 <form method="post">
     <div>
         <label for="bDay"><em>Date of birth:</em></label>
             <input type="date" id="bDay" name="dateOfBirth">
     </div>
     <div>
-    <label for="userName"><em>Username:</em></label>
-        <input type="text" id="userName" name="userName">
+        <label for="userName"><em>Username:</em></label>
+            <input type="text" id="userName" name="userName">
     </div>
     <div>
         <label for="firstName"><em>First name:</em></label>
@@ -45,7 +47,8 @@
         <label for="emailAddress"><em>Email:</em></label>
             <input type="email" id="emailAddress" name="emailAddress">
     </div>
-    <input type="submit" value="Submit">
+    <input type="submit" class="btn btn-success" value="Submit">
+    </div>
 </form>
 </body>
 </html>

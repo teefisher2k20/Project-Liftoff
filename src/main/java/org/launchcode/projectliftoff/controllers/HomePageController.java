@@ -20,6 +20,7 @@ public class HomePageController {
     public String showLandingPage(Model model) {
         model.addAttribute("landingPage", landingPage);
 
+
         return "index";
     }
 //localhost:8080/create
