@@ -1,26 +1,54 @@
 package org.launchcode.projectliftoff.models;
 
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.PositiveOrZero;
+import javax.validation.constraints.Size;
 import java.util.Objects;
 
-public class VoterQuestions {
+public class UserRegistration {
 
     private int id;
     private static int nextId = 1;
-
     private int dateOfBirth;
-    private String userName;
-    private String firstName;
-    private String lastName;
-    private String address;
-    private String city;
-    private String state;
-    private int zip;
-    private int phone;
-    private String email;
 
-    public VoterQuestions(int dateOfBirth, String userName, String firstName,
-                          String lastName, String address, String city, String state, int zip,
-                          int phone, String email) {
+    @NotBlank(message = "User name is required.")
+    @Size(min = 5, max = 15, message = "name must be between 3 and 15 characters")
+    private String userName;
+
+    @NotBlank(message = "First name is required.")
+    @Size(min = 3, max = 15, message = "first name must be between 3 and 15 characters")
+    private String firstName;
+
+    @NotBlank(message = "Last name is required.")
+    @Size(min = 3, max = 15, message = "last name must be between 3 and 15 characters")
+    private String lastName;
+
+    @NotBlank(message = "address is required.")
+    @Size(min = 5, max = 30, message = "address must be between 5 and 30 characters")
+    private String address;
+
+    @NotBlank(message = "City is required.")
+    @Size(min = 2, max = 20, message = "city must be between 5 and 30 characters")
+    private String city;
+
+    @NotBlank(message = "state is required.")
+    @Size(max = 2, message = "State must be 2 characters")
+    private String state;
+
+    @NotBlank(message = "Zip code required.")
+    @PositiveOrZero
+    private int zip;
+
+    @PositiveOrZero
+    private int phone;
+
+    @Email(message = "Invalid email. Try again.")
+    private String contactEmail;
+
+    public UserRegistration(int dateOfBirth, String userName, String firstName,
+                            String lastName, String address, String city, String state, int zip,
+                            int phone, String contactEmail) {
         this.dateOfBirth = dateOfBirth;
         this.userName = userName;
         this.firstName = firstName;
@@ -30,7 +58,7 @@ public class VoterQuestions {
         this.state = state;
         this.zip = zip;
         this.phone = phone;
-        this.email = email;
+        this.contactEmail = contactEmail;
         this.id = nextId;
         nextId++;
     }
@@ -112,11 +140,11 @@ public class VoterQuestions {
     }
 
     public String getEmail() {
-        return email;
+        return contactEmail;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.contactEmail = contactEmail;
     }
 
     @Override
@@ -131,20 +159,20 @@ public class VoterQuestions {
                 ", state='" + state + '\'' +
                 ", zip=" + zip +
                 ", phone=" + phone +
-                ", email='" + email + '\'' +
+                ", contactEmail='" + contactEmail + '\'' +
                 '}';
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof VoterQuestions)) return false;
-        VoterQuestions that = (VoterQuestions) o;
-        return dateOfBirth == that.dateOfBirth && zip == that.zip && phone == that.phone && userName.equals(that.userName) && firstName.equals(that.firstName) && lastName.equals(that.lastName) && address.equals(that.address) && city.equals(that.city) && state.equals(that.state) && email.equals(that.email);
+        if (!(o instanceof UserRegistration)) return false;
+        UserRegistration that = (UserRegistration) o;
+        return dateOfBirth == that.dateOfBirth && zip == that.zip && phone == that.phone && userName.equals(that.userName) && firstName.equals(that.firstName) && lastName.equals(that.lastName) && address.equals(that.address) && city.equals(that.city) && state.equals(that.state) && contactEmail.equals(that.contactEmail);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dateOfBirth, userName, firstName, lastName, address, city, state, zip, phone, email);
+        return Objects.hash(dateOfBirth, userName, firstName, lastName, address, city, state, zip, phone, contactEmail);
     }
 }

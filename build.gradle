@@ -6,7 +6,9 @@ plugins {
 
 group = 'org.launchcode'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '13'
+sourceCompatibility = '14'
+
+
 
 repositories {
 	mavenCentral()
@@ -18,7 +20,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.jetbrains:annotations:20.1.0'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	testImplementation('org.springframework.boot:spring-boot-starter-test')
+	testImplementation('org.springframework.boot:spring-boot-starter-test'){
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
 }
 
 test {
