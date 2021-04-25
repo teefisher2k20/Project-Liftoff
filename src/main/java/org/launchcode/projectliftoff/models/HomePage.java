@@ -1,23 +1,34 @@
 package org.launchcode.projectliftoff.models;
 import org.springframework.stereotype.Controller;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.Objects;
 
-@Controller
+@Entity
 public class HomePage {
 
-    @NotBlank(message = "User name is required.")
-    @Size(min = 5, max = 15, message = "User name must be between 3 and 15 characters")
-    private String userName;
+@Id
+@GeneratedValue
+private int Id;
 
-    @NotBlank(message = "Password is required.")
-    private String password;
+@NotBlank(message = "User name is required.")
+@Size(min = 5, max = 15, message = "User name must be between 3 and 15 characters")
+private String userName;
+
+@NotBlank(message = "Password is required.")
+private String password;
 
     public HomePage(String userName, String password) {
         this.userName = userName;
         this.password = password;
+    }
+
+    public int getId() {
+        return Id;
     }
 
     public String getUserName() {
