@@ -7,7 +7,8 @@ import java.util.Objects;
 public class HomePage {
 
 
-private int Id;
+private int id;
+private static int nextId = 1;
 
 @NotBlank(message = "User name is required.")
 @Size(min = 5, max = 15, message = "User name must be between 3 and 15 characters")
@@ -19,10 +20,12 @@ private String password;
     public HomePage(String userName, String password) {
         this.userName = userName;
         this.password = password;
+        this.id = nextId;
+        nextId++;
     }
 
     public int getId() {
-        return Id;
+        return id;
     }
 
     public String getUserName() {
@@ -53,14 +56,12 @@ private String password;
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof HomePage)) return false;
-        HomePage that = (HomePage) o;
-        return Objects.equals(userName, that.userName) && Objects.equals(password, that.password);
+        HomePage homePage = (HomePage) o;
+        return id == homePage.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userName, password);
+        return Objects.hash(id);
     }
-
-
 }

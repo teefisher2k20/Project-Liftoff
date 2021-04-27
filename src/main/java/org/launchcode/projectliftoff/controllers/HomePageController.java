@@ -14,12 +14,12 @@ import java.util.List;
 @Controller
 public class HomePageController {
 
-    private static List<String> landingPage = new ArrayList<>();
+    private static List<Object> userLandingPage = new ArrayList<>();
 
     //localhost:8080
     @GetMapping
     public String showLandingPage(Model model) {
-        model.addAttribute("landingPage", landingPage);
+        model.addAttribute("userLandingPage", userLandingPage);
 
 
         return "index";

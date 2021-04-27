@@ -12,7 +12,7 @@ public class UserRegistration {
 
     private int id;
     private static int nextId = 1;
-    private int dateOfBirth;
+    private String dateOfBirth;
 
     @NotBlank(message = "User name is required.")
     @Size(min = 5, max = 15, message = "name must be between 3 and 15 characters")
@@ -40,7 +40,7 @@ public class UserRegistration {
 
     @NotBlank(message = "Zip code required.")
     @PositiveOrZero
-    private int zip;
+    private int zipCode;
 
     @PositiveOrZero
     private int phone;
@@ -48,9 +48,7 @@ public class UserRegistration {
     @Email(message = "Invalid email. Try again.")
     private String contactEmail;
 
-    public UserRegistration(int dateOfBirth, String userName, String firstName,
-                            String lastName, String address, String city, String state, int zip,
-                            int phone, String contactEmail) {
+    public UserRegistration(String dateOfBirth, String userName, String firstName, String lastName, String address, String city, String state, int zipCode, int phone, String contactEmail) {
         this.dateOfBirth = dateOfBirth;
         this.userName = userName;
         this.firstName = firstName;
@@ -58,7 +56,7 @@ public class UserRegistration {
         this.address = address;
         this.city = city;
         this.state = state;
-        this.zip = zip;
+        this.zipCode = zipCode;
         this.phone = phone;
         this.contactEmail = contactEmail;
         this.id = nextId;
@@ -69,11 +67,11 @@ public class UserRegistration {
         return id;
     }
 
-    public int getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(int dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -125,12 +123,12 @@ public class UserRegistration {
         this.state = state;
     }
 
-    public int getZip() {
-        return zip;
+    public int getZipCode() {
+        return zipCode;
     }
 
-    public void setZip(int zip) {
-        this.zip = zip;
+    public void setZipCode(int zipCode) {
+        this.zipCode = zipCode;
     }
 
     public int getPhone() {
@@ -141,25 +139,26 @@ public class UserRegistration {
         this.phone = phone;
     }
 
-    public String getEmail() {
+    public String getContactEmail() {
         return contactEmail;
     }
 
-    public void setEmail(String email) {
+    public void setContactEmail(String contactEmail) {
         this.contactEmail = contactEmail;
     }
 
     @Override
     public String toString() {
-        return "VoterQuestions{" +
-                "dateOfBirth=" + dateOfBirth +
+        return "UserRegistration{" +
+                "id=" + id +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
                 ", userName='" + userName + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", address='" + address + '\'' +
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
-                ", zip=" + zip +
+                ", zipCode=" + zipCode +
                 ", phone=" + phone +
                 ", contactEmail='" + contactEmail + '\'' +
                 '}';
@@ -170,11 +169,11 @@ public class UserRegistration {
         if (this == o) return true;
         if (!(o instanceof UserRegistration)) return false;
         UserRegistration that = (UserRegistration) o;
-        return dateOfBirth == that.dateOfBirth && zip == that.zip && phone == that.phone && userName.equals(that.userName) && firstName.equals(that.firstName) && lastName.equals(that.lastName) && address.equals(that.address) && city.equals(that.city) && state.equals(that.state) && contactEmail.equals(that.contactEmail);
+        return id == that.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dateOfBirth, userName, firstName, lastName, address, city, state, zip, phone, contactEmail);
+        return Objects.hash(id);
     }
 }
