@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
+@RequestMapping("user")
 public class HomePageController {
 
     private static List<String> landingPage = new ArrayList<>();
