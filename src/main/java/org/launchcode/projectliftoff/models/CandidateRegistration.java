@@ -1,11 +1,17 @@
 package org.launchcode.projectliftoff.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.Objects;
 
+@Entity
 public class CandidateRegistration {
 
+    @Id
+    @GeneratedValue
     private int id;
     private static int nextId = 1;
     private String dateOfBirth;
@@ -31,6 +37,11 @@ public class CandidateRegistration {
         this.id = nextId;
         nextId++;
     }
+
+    public CandidateRegistration() {
+    }
+
+
 
     public int getId() {
         return id;

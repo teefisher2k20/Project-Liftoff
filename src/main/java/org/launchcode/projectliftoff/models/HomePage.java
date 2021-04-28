@@ -1,27 +1,34 @@
 package org.launchcode.projectliftoff.models;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.Objects;
 
-
+@Entity
 public class HomePage {
 
+    @Id
+    @GeneratedValue
+    private int id;
+    private static int nextId = 1;
 
-private int id;
-private static int nextId = 1;
+    @NotBlank(message = "User name is required.")
+    @Size(min = 5, max = 15, message = "User name must be between 3 and 15 characters")
+    private String userName;
 
-@NotBlank(message = "User name is required.")
-@Size(min = 5, max = 15, message = "User name must be between 3 and 15 characters")
-private String userName;
-
-@NotBlank(message = "Password is required.")
-private String password;
+    @NotBlank(message = "Password is required.")
+    private String password;
 
     public HomePage(String userName, String password) {
         this.userName = userName;
         this.password = password;
         this.id = nextId;
         nextId++;
+    }
+
+    public HomePage() {
     }
 
     public int getId() {
