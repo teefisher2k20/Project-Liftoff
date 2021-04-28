@@ -1,8 +1,11 @@
 package org.launchcode.projectliftoff.models;
 
+import org.jetbrains.annotations.NotNull;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.Objects;
@@ -27,12 +30,15 @@ public class CandidateRegistration {
     @Size(min = 3, max = 15, message = "first name must be between 3 and 15 characters")
     private String lastName;
 
+    @ManyToOne
+    private CandidateRegistration candidateRegistration;
 
-    public CandidateRegistration(String dateOfBirth, String userName, String firstName, String lastName) {
+    public CandidateRegistration(String dateOfBirth, String userName, String firstName, String lastName, CandidateRegistration candidateRegistration) {
         this.dateOfBirth = dateOfBirth;
         this.userName = userName;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.candidateRegistration = candidateRegistration;
     }
 
     public CandidateRegistration() {
@@ -42,6 +48,14 @@ public class CandidateRegistration {
 
     public int getId() {
         return id;
+    }
+
+    public CandidateRegistration getCandidateRegistration() {
+        return candidateRegistration;
+    }
+
+    public void setCandidateRegistration(CandidateRegistration candidateRegistration) {
+        this.candidateRegistration = candidateRegistration;
     }
 
     public String getDateOfBirth() {

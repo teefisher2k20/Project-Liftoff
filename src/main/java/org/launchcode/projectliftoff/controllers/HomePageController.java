@@ -28,7 +28,8 @@ public class HomePageController {
 //localhost:8080/create
     @GetMapping("create")
     public String createNewVoterForm(Model model) {
-
+    model.addAttribute("userName", "userName");
+    model.addAttribute("firstName", homePageRepository.findAll());
         return "voters/register";
     }
 //posts the voter confirmation page

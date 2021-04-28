@@ -2,6 +2,7 @@ package org.launchcode.projectliftoff.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.Objects;
@@ -21,9 +22,13 @@ public class HomePage {
 
     private String password;
 
-    public HomePage(String userName, String password) {
+    @ManyToOne
+    private HomePage homePage;
+
+    public HomePage(String userName, String password, HomePage homePage) {
         this.userName = userName;
         this.password = password;
+        this.homePage = homePage;
 
     }
 
@@ -32,6 +37,14 @@ public class HomePage {
 
     public int getId() {
         return id;
+    }
+
+    public HomePage getHomePage() {
+        return homePage;
+    }
+
+    public void setHomePage(HomePage homePage) {
+        this.homePage = homePage;
     }
 
     public String getUserName() {
@@ -50,13 +63,7 @@ public class HomePage {
         this.password = password;
     }
 
-    @Override
-    public String toString() {
-        return "HomePageController{" +
-                "userName='" + userName + '\'' +
-                ", password='" + password + '\'' +
-                '}';
-    }
+
 
     @Override
     public boolean equals(Object o) {

@@ -3,6 +3,7 @@ package org.launchcode.projectliftoff.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.PositiveOrZero;
@@ -53,7 +54,10 @@ public class UserRegistration {
     @Email(message = "Invalid email. Try again.")
     private String contactEmail;
 
-    public UserRegistration(String dateOfBirth, String userName, String firstName, String lastName, String address, String city, String state, int zipCode, int phone, String contactEmail) {
+    @ManyToOne
+    private UserRegistration userRegistration;
+
+    public UserRegistration(String dateOfBirth, String userName, String firstName, String lastName, String address, String city, String state, int zipCode, int phone, String contactEmail, UserRegistration userRegistration) {
         this.dateOfBirth = dateOfBirth;
         this.userName = userName;
         this.firstName = firstName;
@@ -64,6 +68,7 @@ public class UserRegistration {
         this.zipCode = zipCode;
         this.phone = phone;
         this.contactEmail = contactEmail;
+        this.userRegistration = userRegistration;
 
     }
     public UserRegistration() {}
@@ -82,6 +87,14 @@ public class UserRegistration {
 
     public String getUserName() {
         return userName;
+    }
+
+    public UserRegistration getUserRegistration() {
+        return userRegistration;
+    }
+
+    public void setUserRegistration(UserRegistration userRegistration) {
+        this.userRegistration = userRegistration;
     }
 
     public void setUserName(String userName) {
