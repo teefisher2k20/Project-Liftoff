@@ -29,6 +29,9 @@ public class CandidateController {
     //localhost:8080/candidate/create
     @GetMapping("create")
     public String createNewCandidate(Model model) {
+    model.addAttribute("userName", "userName");
+    model.addAttribute("firstName", candidateRepository.findAll());
+
         return "candidates/register";
     }
 

@@ -15,8 +15,9 @@ public class UserController {
     //localhost:8080/confirm
     @GetMapping("confirm")
     public String showUserLandingPage(Model model) {
-
-        return "voters/confirm";
+        model.addAttribute("userName", "userName");
+        model.addAttribute("password", userRepository.findAll());
+            return "voters/confirm";
     }
 
 }

@@ -1,17 +1,13 @@
 package org.launchcode.projectliftoff.controllers;
 
 import org.launchcode.projectliftoff.data.HomePageRepository;
+import org.launchcode.projectliftoff.models.HomePage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-
-import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 public class HomePageController {
@@ -22,6 +18,8 @@ public class HomePageController {
     //localhost:8080
     @GetMapping
     public String showLandingPage(Model model) {
+        model.addAttribute("userName", "userName");
+        model.addAttribute("firstName", homePageRepository.findAll());
 
 
 
@@ -35,7 +33,8 @@ public class HomePageController {
     }
 //posts the voter confirmation page
     @PostMapping("create")
-    public String confirmNewVoter(Model model) {
+    public String confirmNewVoter(@ModelAttribute HomePage newHomePage) {
+        homePageRepository.save(newHomePage);
 
         return "voters/confirm";
     }

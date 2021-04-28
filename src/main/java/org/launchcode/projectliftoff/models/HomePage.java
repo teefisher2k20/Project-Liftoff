@@ -18,7 +18,7 @@ public class HomePage {
     @Size(min = 5, max = 15, message = "User name must be between 3 and 15 characters")
     private String userName;
 
-    @NotBlank(message = "Password is required.")
+
     private String password;
 
     public HomePage(String userName, String password) {
