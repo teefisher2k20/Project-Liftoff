@@ -12,7 +12,7 @@ public class HomePage {
     @Id
     @GeneratedValue
     private int id;
-    private static int nextId = 1;
+
 
     @NotBlank(message = "User name is required.")
     @Size(min = 5, max = 15, message = "User name must be between 3 and 15 characters")
@@ -24,8 +24,7 @@ public class HomePage {
     public HomePage(String userName, String password) {
         this.userName = userName;
         this.password = password;
-        this.id = nextId;
-        nextId++;
+
     }
 
     public HomePage() {

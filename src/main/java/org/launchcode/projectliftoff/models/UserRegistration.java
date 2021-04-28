@@ -15,7 +15,8 @@ public class UserRegistration {
     @Id
     @GeneratedValue
     private int id;
-    private static int nextId = 1;
+
+    @NotBlank(message = "user DOB is required")
     private String dateOfBirth;
 
     @NotBlank(message = "User name is required.")
@@ -63,8 +64,7 @@ public class UserRegistration {
         this.zipCode = zipCode;
         this.phone = phone;
         this.contactEmail = contactEmail;
-        this.id = nextId;
-        nextId++;
+
     }
     public UserRegistration() {}
 

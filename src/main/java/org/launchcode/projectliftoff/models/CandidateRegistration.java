@@ -13,7 +13,6 @@ public class CandidateRegistration {
     @Id
     @GeneratedValue
     private int id;
-    private static int nextId = 1;
     private String dateOfBirth;
 
     @NotBlank(message = "User name is required.")
@@ -34,8 +33,6 @@ public class CandidateRegistration {
         this.userName = userName;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.id = nextId;
-        nextId++;
     }
 
     public CandidateRegistration() {
