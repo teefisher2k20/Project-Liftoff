@@ -13,6 +13,7 @@ import java.util.Objects;
 @Entity
 public class UserRegistration {
 
+
     @Id
     @GeneratedValue
     private int id;
@@ -71,7 +72,9 @@ public class UserRegistration {
         this.userRegistration = userRegistration;
 
     }
-    public UserRegistration() {}
+
+    public UserRegistration() {
+    }
 
     public int getId() {
         return id;

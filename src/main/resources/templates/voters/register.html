@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-<body class="container">
-<div class="jumbotron">
+<body>
+
 <h4 th:fragment="welcomeMessage">Welcome to Project Liftoff</h4>
 <h1><em>Voter registration form</em></h1>
     <form method="post">
@@ -22,22 +22,7 @@
         <label for="lastName"><em>Last name:</em></label>
             <input type="text" id="lastName" name="lastName">
     </div>
-    <div>
-        <label for="address"><em>Address:</em></label>
-            <input type="text" id="address" name="address">
-    </div>
-    <div>
-        <label for="city"><em>City:</em></label>
-            <input type="text" id="city" name="city">
-    </div>
-    <div>
-        <label for="state"><em>State:</em></label>
-            <input type="text" id="state" name="state">
-    </div>
-    <div>
-        <label for="zipCode"><em>Zip Code:</em></label>
-            <input type="number" id="zipCode" name="ZipCode">
-    </div>
+
         <div>
         <label for="phone"><em>Phone:</em></label>
         <input type="number" id="phone" name="phone">
@@ -50,6 +35,6 @@
             <input type="submit" class="btn btn-success" value="submit" />
         </div>
     </form>
-</div>
+
 </body>
 </html>

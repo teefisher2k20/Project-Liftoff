@@ -3,6 +3,8 @@
 <head th:replace="fragments :: head"></head>
 <body class="container">
 <h4 th:fragment="welcomeMessage">Welcome to Project Liftoff</h4>
+<form method="post" action="candidate/create">
+
 
 <h1>Candidate confirmation page</h1>
 <table class="table table-striped">
@@ -18,5 +20,6 @@
     <nav th:replace="fragments :: navigation">
     </nav>
 </div>
+</form>
 </body>
 </html>

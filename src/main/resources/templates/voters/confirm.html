@@ -1,28 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-
-    <head th:replace="fragments :: head"></head>
-
-<body class="container">
-<h4 th:fragment="welcomeMessage">Welcome to Project Liftoff</h4>
-
-
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="UTF-8" />
+    <title>Confirmation page</title>
+</head>
+<body >
 <h1>Thank You For Registering</h1>
-<table class="table table-striped">
-    <thead>
-    <tr>
-        <th>Id</th>
-        <th>Username</th>
-        <th>Password</th>
-    </tr>
-    </thead>
-
-
-</table>
+<ul>
+    <th:block th:each="userInfo : ${userInfo}">
+        <li th:text="${userInfo}">
+        </li>
+    </th:block>
+</ul>
 <div>
     <nav th:replace="fragments :: navigation">
     </nav>
 </div>
-
 </body>
 </html>

@@ -1,4 +1,5 @@
 package org.launchcode.projectliftoff.models;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -62,7 +63,6 @@ public class HomePage {
     public void setPassword(String password) {
         this.password = password;
     }
-
 
 
     @Override

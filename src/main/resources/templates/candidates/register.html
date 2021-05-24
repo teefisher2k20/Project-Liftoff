@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-<body class="container">
-<div class="jumbotron">
+<body>
 <h4 th:fragment="welcomeMessage">Welcome to Project Liftoff</h4>
 
-<form method="post">
+<form method="post" action="/candidate/confirm">
     <h5>Enter candidate information</h5>
 
     <div>

@@ -45,7 +45,6 @@ public class CandidateRegistration {
     }
 
 
-
     public int getId() {
         return id;
     }
