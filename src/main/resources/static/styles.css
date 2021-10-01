@@ -56,3 +56,14 @@ ul li a {
 ul li a:hover {
     color: #ff7200;
 }
+
+.search-box {
+    float: right;
+    width: 240px;
+    background: #fff;
+    height: 30px;
+    padding: 8px;
+    border-radius: 15px;
+    margin-top: 1%;
+    margin-right: 2%;
+}
