@@ -1,11 +1,36 @@
-body {
-    background-color: red;
+* {
+margin: 0;
+padding: 0;
 }
 
-.div {
-    background-color: aqua;
+
+
+.navbar {
+    width: 95%;
+    height: auto;
+    margin-left: 30px;
 }
 
-#liftoff {
-    color:
+.logo {
+    color: #ff720;
+    font-size: 40px;
+    font-family: cursive;
+    float: left;
+    padding-top: .6%;
+    cursor: pointer;
+}
+
+.main {
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(a.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    font-family: sans-serif;
+
+}
+
+ul {
+    float: left;
+    display: flex;
 }

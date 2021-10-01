@@ -24,7 +24,7 @@ public class CustomerController {
         model.addAttribute("listCustomer", listCustomer);
 
 
-                return "index";
+                return "landing_page";
     }
 
     @RequestMapping("/new")
