@@ -22,7 +22,7 @@ padding: 0;
 
 .main {
     width: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(a.jpg);
+    background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(newyork.jpg);
     background-position: center;
     background-size: cover;
     height: 100vh;
@@ -96,3 +96,41 @@ ul li a:hover {
     line-height: 30px;
     letter-spacing: .6px;
 }
+
+.title {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.title h1 {
+    cursor: pointer;
+    font-family: cursive;
+    color: #fff;
+    font-size: 85px;
+}
+
+.button {
+    position: absolute;
+    top: 51%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn {
+    color: #fff;
+    padding: 5px 20px;
+    font-size: 18px;
+    text-decoration: none;
+    border: 1px solid #fff;
+    transition: .3s ease;
+
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
