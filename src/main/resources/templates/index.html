@@ -14,10 +14,10 @@
     </div>
     <div class="menu">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="/create">Create New User</a></li>
+            <li><a href="#">Edit User</a></li>
+            <li><a href="/create">New User</a></li>
             <li><a href="candidate/create">New Candidate</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#">Edit Candidate</a></li>
         </ul>
     </div>
     <div class="search-box">
@@ -28,21 +28,9 @@
         <h1>ACCOUNT MANAGER</h1>
 </div>
     <div class="button">
-        <a href="#" class="btn">Username</a>
-        <a href="#" class="btn">Password</a>
+        <a href="#" class="btn">Sign Out</a>
+        <a href="#" class="btn">Change Password</a>
     </div>
 </div>
-
-<form method="post" action="/create">
-        <div class="jumbotron">
-            <h4 th:replace="fragments :: welcomeMessage"></h4>
-            <label>Username: </label>
-                <input type="text" id="userName" name="userName"><br><br>
-            <label>Password: </label>
-                <input type="password" id="password" name="password"><br><br>
-                <input type="submit" class="btn btn-success" value="Submit">
-            <nav th:replace="fragments :: navigation"></nav>
-        </div>
-    </form>
 </body>
 </html>

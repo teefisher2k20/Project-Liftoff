@@ -30,7 +30,7 @@ public class HomePageController {
     public String createNewVoterForm(Model model) {
         model.addAttribute("userName", "userName");
         model.addAttribute("firstName", homePageRepository.findAll());
-        return "voters/register";
+        return "voters/newUser";
     }
 
     //posts the voter confirmation page
