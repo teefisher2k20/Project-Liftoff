@@ -1,9 +1,39 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head th:replace="fragments :: head"></head>
-<body class="container">
+<html lang="en">
+<head>
 
-    <form method="post" action="/create">
+    <meta name="viewport" content="width-device-width, initial-scale-1.0">
+    <title>Sign In Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+</head>
+<body>
+<div class="main">
+    <div class="navbar">
+        <h2 class="logo">Project Liftoff</h2>
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="/create">Create New User</a></li>
+            <li><a href="candidate/create">New Candidate</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <div class="search-box">
+        <input class="search-txt" type="text" name="" placeholder="Type to search">
+        <a class="search-btn" href="#"><i class="fas fa-search"></i></a>
+    </div>
+    <div class="title">
+        <h1>ACCOUNT MANAGER</h1>
+</div>
+    <div class="button">
+        <a href="#" class="btn">Username</a>
+        <a href="#" class="btn">Password</a>
+    </div>
+</div>
+
+<form method="post" action="/create">
         <div class="jumbotron">
             <h4 th:replace="fragments :: welcomeMessage"></h4>
             <label>Username: </label>
