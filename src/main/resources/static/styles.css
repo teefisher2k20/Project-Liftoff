@@ -5,7 +5,8 @@
 
 .main {
     width: 100%;
-    background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+    background-color: black;
+
     background-position: center;
     background-size: cover;
     height: 100vh;
@@ -107,10 +108,14 @@ ul li a:hover{
 }
 
 .title h1{
+
+    align-items: center;
     cursor: pointer;
     font-family: sans-serif;
     color: #fff;
     font-size: 85px;
+
+
 }
 
 .button{

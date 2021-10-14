@@ -9,12 +9,16 @@
         padding: 0;
         }
         body{
-        background-image: url(C:\Users\Jorda\Pictures)
+        background-color: light-blue;
         background-position: center;
         background-size: cover;
         font-family: sans-serif;
+        margin-top: 40px;
+        }
+        .regform{
+        width: 800px
+        background-color: rgb(0,0,0,0.6);
         margin: auto;
-        color: #FFFFFF
         padding: 10px 0px 10px 0px;
         text-align: center;
         border-radius: 15px 15px 0px 0px;
@@ -35,6 +39,31 @@
 
    }
 
+   .date {
+  position: relative;
+    left: 200px;
+        top: -37px;
+        line-height: 40px;
+        width:480px;
+        border-radius:6px;
+        padding: 0 22px;
+        font-size: 16px;
+        color: #555;
+}
+
+.username {
+    position: relative;
+    left: 200px;
+        top: -37px;
+        line-height: 40px;
+        width:480px;
+        border-radius:6px;
+        padding: 0 22px;
+        font-size: 16px;
+        color: #555;
+}
+
+
 .name {
     margin-left: 25px;
     margin-top: 30px;
@@ -54,8 +83,8 @@
 }
 .lastname{
     position: relative;
-    left: 417px;
-    top: -80px;
+    left: 450px;
+    top: -100px;
     line-height: 40px;
     border-radius: 6px;
     padding: 0 22px;
@@ -64,25 +93,25 @@
 }
 .firstlabel{
     position: relative;
-    color: #E5E5E5;
+    color: white;
     text-transform: capitalize;
     font-size: 14px;
-    left: 203px;
-    top:-45px;
+    left: 220px;
+    top:-24px;
 }
 .lastlabel{
     position: relative;
-    color: #E5E5E5;
+    color: white;
     text-transform: capitalize;
     font-size: 14px;
-    left: 175px;
-    top:-45px;
+    left: 220px;
+    top:-55px;
 }
 
 .email {
     position: relative;
     left: 200px;
-        top: -37px;
+        top: -75px;
         line-height: 40px;
         width:480px;
         border-radius:6px;
@@ -102,6 +131,26 @@
         font-size: 16px;
         color: #555;
 }
+.button {
+
+  border: 2px solid #008CBA;
+  color: blue;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+}
+
+.button:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+
 
 
 
@@ -112,14 +161,14 @@
   <div class="regform"><h1>Registration Form</h1></div>
   <div class="main">
       <form>
-
-
+          <div>
           <h2 class="name">Date of birth</h2>
           <input class="date" type="date" name="date">
-
+          </div>
+          <div>
         <h2 class="name">Username</h2>
         <input class="username" type="text" name="username">
-
+          </div>
           <div id="name">
               <h2 class="name">Name</h2>
               <div>
@@ -130,18 +179,23 @@
               <input class="lastname" type="text" name="last_name">
               <label class="lastlabel">last name</label>
               </div>
-          </div>
 
 
+        <div>
           <h2 class="name">Phone</h2>
           <input class="code" type="text" name="phone">
-
+        </div>
+          <div>
         <h2 class="name">Email</h2>
         <input class="email" type="text" name="email">
+          </div>
+              <div>
+          <input class="button" type="button" value="register">
 
-          <button type="submit">Register</button>
-      </form>
+  </div>
   </div>
 
+      </form>
+  </div>
 </body>
 </html>
